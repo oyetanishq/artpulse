@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import "tailwindcss";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	background-color: aliceblue;
+    height: 100dvh;
+
+	/* fonts */
+	font-family: "League Spartan", serif;
+	font-style: normal;
+	font-optical-sizing: auto;
+
+	/* hide scrollbar */
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+#root {
+    height: 100%;
+}
+
+*::selection {
+	background-color: #fce9bc;
+}
+
+*::-webkit-scrollbar {
+	display: none;
+}
