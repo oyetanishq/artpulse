@@ -5,12 +5,14 @@ import sketch from "/sketch.svg";
 
 const Home = () => {
 	const [socket, setSocket] = useState<WebSocket | null>(null);
+	const [socketState, setSocketState] = useState(false);
 	const [color] = useState(randomColor());
 	const canvas = useRef(null);
 
 	useEffect(() => {
 		const ws = new WebSocket(import.meta.env.VITE_SOCKET_URL);
-		ws.onopen = () => console.log("connected");
+        
+		ws.onopen = () => setSocketState(true);
 		ws.onclose = () => console.log("closed");
 		ws.onmessage = ({ data }) => {
 			if (!canvas.current) return;
@@ -27,7 +29,7 @@ const Home = () => {
 		return () => ws.close();
 	}, []);
 
-	if (!socket) return <main className="h-full flex justify-center items-center">connecting...</main>;
+	if (!socketState) return <main className="h-full flex justify-center items-center">connecting...</main>;
 
 	return (
 		<main className="h-full flex justify-center items-center relative">
@@ -40,7 +42,7 @@ const Home = () => {
 				strokeColor={color}
 				onStroke={(e) => {
 					if (e.paths.length === 1) return;
-					socket.send(JSON.stringify({ type: "sendtoall", message: e }));
+					socket!.send(JSON.stringify({ type: "sendtoall", message: e }));
 				}}
 			/>
 		</main>
