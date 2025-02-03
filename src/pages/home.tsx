@@ -33,7 +33,7 @@ const Home = () => {
 		<main className="h-full flex justify-center items-center relative">
 			<img src={sketch} className="logo absolute top-8" alt="sketch text" />
 			<ReactSketchCanvas
-				className="!border !rounded-sm !bg-white"
+				className="!bg-white"
 				width="100%"
 				height="100%"
 				ref={canvas}
