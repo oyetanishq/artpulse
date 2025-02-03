@@ -4,6 +4,7 @@ A Collaborative Sketch Board to Draw in Real-Time. 🎨
 
 ![artpulse demo video](./public/artpulse.gif)
 
+#### [_https://artpulse.tanishqsingh.com_](https://artpulse.tanishqsingh.com)
 #### **_Features:_**
 1. **Live Sketching**: Draw anything, and it syncs in real-time for all users.
 2. **Unique Color Per Session**: Refresh for a new identity!
