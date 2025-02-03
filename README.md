@@ -2,7 +2,7 @@
 
 A Collaborative Sketch Board to Draw in Real-Time. 🎨
 
-![artpulse demo video](/public/artpulse.mp4)
+![artpulse demo video](./public/artpulse.gif)
 
 #### **_Features:_**
 1. **Live Sketching**: Draw anything, and it syncs in real-time for all users.
