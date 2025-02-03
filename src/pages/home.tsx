@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import { randomColor } from "@/lib/random-color";
+import sketch from "/sketch.svg";
 
 const Home = () => {
 	const [socket, setSocket] = useState<WebSocket | null>(null);
@@ -29,7 +30,8 @@ const Home = () => {
 	if (!socket) return <main className="h-full flex justify-center items-center">connecting...</main>;
 
 	return (
-		<main className="h-full flex justify-center items-center">
+		<main className="h-full flex justify-center items-center relative">
+			<img src={sketch} className="logo absolute top-8" alt="sketch text" />
 			<ReactSketchCanvas
 				className="!border !rounded-sm !bg-white"
 				width="100%"
